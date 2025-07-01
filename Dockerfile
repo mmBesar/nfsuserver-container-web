@@ -39,7 +39,7 @@ COPY --from=builder /build/nfsuserver/nfsuserver/nfsuserver /usr/local/bin/
 COPY --from=builder /build/nfsuserver/web /var/www/localhost/htdocs/
 
 # Create necessary directories
-RUN mkdir -p /data /var/log/nfsu /run/apache2 && \
+RUN mkdir -p /data /var/log/nfsu /run/apache2 /var/log/supervisor /var/log/apache2 && \
     chown nfsu:nfsu /data /var/log/nfsu && \
     chown -R apache:apache /var/www/localhost/htdocs/
 
